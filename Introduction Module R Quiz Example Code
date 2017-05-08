@@ -1,0 +1,41 @@
+#===============================================================================
+#
+# Introduction Module R Quiz Example Code
+#
+#===============================================================================
+
+# NOTE - Set your working directory to the bootcamp root folder
+# Read the iris data set using read.csv.
+iris <- read.csv("Datasets/Iris_Data.csv")
+
+# Display the first few rows of the iris data.
+head(iris)
+
+# Rename the column name Species to Type.
+names(iris)[5] <- "Type"
+
+
+# Display the first 5 rows and last 3 columns of the iris data frame.
+iris[1:5, 3:5]
+
+# What is the data type of each column in this data frame of iris data?
+str(iris)
+
+# Draw a box plot of Sepal Length.
+boxplot(iris$Sepal.Length)
+
+# Draw a scatter plot of Sepal Length vs Sepal Width.
+plot(Sepal.Width ~ Sepal.Length, data = iris)
+
+# Create a new column in the iris data frame which is the sum of Sepal Length and Sepal Width.
+iris$sum <- iris$Sepal.Length + iris$Sepal.Width
+
+# What are the means, medians, and standard deviations of the four predictor columns in this data frame?
+summary(iris[, 1:4])
+sd(iris$Sepal.Length)
+sd(iris$Sepal.Width)
+sd(iris$Petal.Length)
+sd(iris$Petal.Width)
+
+# Draw the pair-wise correlations between the features of the iris data set.
+pairs(iris[,1:4])
